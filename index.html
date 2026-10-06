@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
+  <header id="site-header" class="site-header">
+    <div class="container header-inner sf-phead">
       <a class="logo" href="#home">Locksmith</a>
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav" data-panel-toggle="nav">
         <span class="nav-toggle-bar" aria-hidden="true"></span>
         <span class="nav-toggle-bar" aria-hidden="true"></span>
         <span class="nav-toggle-bar" aria-hidden="true"></span>
@@ -26,8 +26,11 @@
       <a class="cart-badge" href="#cart" aria-label="Basket, 0 items">
         Basket <span id="cart-count" class="cart-count">0</span>
       </a>
+      <button class="sf-ptoggle" type="button" data-panel-toggle="header"><span class="sf-pt-icon"></span><span class="sf-pt-label"></span></button>
     </div>
   </header>
+  <!-- Brings the top bar back once it has been hidden -->
+  <button class="sf-ptab header-tab" type="button" data-panel-toggle="header"><span class="sf-pt-icon"></span><span class="sf-pt-label" data-closed="Locksmith menu"></span></button>
 
   <main>
     <section id="home" class="hero">
@@ -125,6 +128,7 @@
   </footer>
 
   <script src="js/config.js"></script>
+  <script src="js/panel-toggle.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/main.js"></script>
 </body>
