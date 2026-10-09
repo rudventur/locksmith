@@ -1,9 +1,19 @@
 {
   "categories": [
-    "locksmithing",
     "locks",
-    "carpentry",
-    "doors-fences"
+    "carpentry-doors-windows",
+    "fencing-surveys"
   ],
+  "subcategories": {
+    "locks": [
+      "latch",
+      "mortice",
+      "magnetic",
+      "hinges",
+      "handles",
+      "post-boxes",
+      "alarm-sensors"
+    ]
+  },
   "products": []
 }

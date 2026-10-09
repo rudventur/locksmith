@@ -1,6 +1,6 @@
-# Locksmith — Doors, Locks & Fences
+# BULLLOCKS — Locks, Doors, Windows & Fencing
 
-Launch-ready HTML base for an online locksmith and trade shop (locksmithing, locks, carpentry, doors and fences).
+Launch-ready HTML base for the BULLLOCKS online shop and trade services: locks and door hardware, carpentry of doors and windows, and fencing and surveys.
 
 ## Open locally
 
@@ -14,13 +14,23 @@ npx serve .
 
 | Path | Purpose |
 |------|---------|
-| `index.html` | Landing page |
-| `css/styles.css` | Site styles |
-| `js/config.js` | Shop name, currency, feature flags |
+| `index.html` | Landing page (hero, three service tiles, about, contact) |
+| `css/styles.css` | Site styles (service grid: stacked on mobile, 3 columns on desktop) |
+| `js/config.js` | Shop name (`BULLLOCKS`), currency, feature flags |
 | `js/cart.js` | Client-side basket (localStorage stub) |
 | `js/main.js` | Nav and page init |
-| `data/catalog.json` | Product catalogue skeleton — add products here later |
+| `data/catalog.json` | Product catalogue skeleton — categories and lock subcategories; add products here later |
 | `assets/` | Images and media |
+
+## Service categories
+
+| Tile | `data-category` | Subcategories |
+|------|-----------------|---------------|
+| Locks | `locks` | `latch`, `mortice`, `magnetic`, `hinges`, `handles`, `post-boxes`, `alarm-sensors` |
+| Carpentry of Doors & Windows | `carpentry-doors-windows` | — |
+| Fencing & Surveys | `fencing-surveys` | — |
+
+The lock subcategories are also marked up in `index.html` with `data-subcategory` hooks, ready for buttons and product listings later.
 
 ## Ecommerce note
 

@@ -6,7 +6,7 @@
 (function (global) {
   'use strict';
 
-  var STORAGE_KEY = 'locksmith_cart_v1';
+  var STORAGE_KEY = 'bulllocks_cart_v1';
 
   function readStore() {
     try {
