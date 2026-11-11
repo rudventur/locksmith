@@ -1,4 +1,4 @@
-/* Locksmith shop — mobile-first, charcoal / steel / brass */
+/* BULLLOCKS shop — mobile-first, charcoal / steel / brass */
 
 :root {
   --color-bg: #1a1c1e;
@@ -334,6 +334,8 @@ body.sf-hidden-header .sf-ptab.header-tab {
 }
 
 .service-card {
+  display: flex;
+  flex-direction: column;
   padding: var(--space-md);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -357,8 +359,23 @@ body.sf-hidden-header .sf-ptab.header-tab {
   margin-bottom: 0;
 }
 
+.service-list {
+  margin: 0 0 var(--space-sm);
+  padding-left: 1.1rem;
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+.service-list li {
+  margin-bottom: 0.15rem;
+}
+
+.service-list li::marker {
+  color: var(--color-accent);
+}
+
 .service-placeholder {
-  margin-top: var(--space-md) !important;
+  margin-top: auto !important;
   padding-top: var(--space-sm);
   border-top: 1px dashed var(--color-border);
   font-size: 0.8125rem !important;
@@ -443,10 +460,6 @@ body.sf-hidden-header .sf-ptab.header-tab {
 /* Responsive */
 
 @media (min-width: 640px) {
-  .service-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .footer-inner {
     flex-direction: row;
     justify-content: space-between;
@@ -480,6 +493,6 @@ body.sf-hidden-header .sf-ptab.header-tab {
 
 @media (min-width: 900px) {
   .service-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }

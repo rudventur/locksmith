@@ -3,7 +3,7 @@
  * Future: point apiBaseUrl at a real ecommerce backend.
  */
 window.ShopConfig = Object.freeze({
-  shopName: 'Locksmith',
+  shopName: 'BULLLOCKS',
   currency: 'GBP',
   locale: 'en-GB',
   apiBaseUrl: '', // e.g. 'https://api.example.com' when ready
