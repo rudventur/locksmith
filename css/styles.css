@@ -21,6 +21,14 @@
   --max-width: 68rem;
   --header-height: 3.75rem;
   --shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.35);
+
+  /* Panel toggles (js/panel-toggle.js) in the shop's brass and charcoal */
+  --sf-panel-accent: var(--color-accent);
+  --sf-panel-text: var(--color-text);
+  --sf-panel-ink: var(--color-accent-text);
+  --sf-panel-font: var(--font-sans);
+  --sf-panel-font-size: 0.8125rem;
+  --sf-panel-radius: var(--radius);
 }
 
 *,
@@ -185,6 +193,39 @@ button:focus-visible {
   color: var(--color-accent-text);
   font-size: 0.75rem;
   font-weight: 700;
+}
+
+/* Top bar hide / show (js/panel-toggle.js) */
+
+.header-inner .sf-ptoggle {
+  margin-left: 0;
+  padding: 0.3rem 0.6rem;
+  border-color: var(--color-border);
+}
+
+.header-inner .sf-ptoggle:hover,
+.header-inner .sf-ptoggle:focus-visible {
+  border-color: var(--color-accent);
+}
+
+.sf-ptab.header-tab {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 1rem;
+  z-index: 100;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: var(--shadow);
+  font-weight: 600;
+}
+
+body.sf-hidden-header .site-header {
+  display: none;
+}
+
+body.sf-hidden-header .sf-ptab.header-tab {
+  display: flex;
 }
 
 /* Hero */

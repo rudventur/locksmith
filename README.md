@@ -18,7 +18,8 @@ npx serve .
 | `css/styles.css` | Site styles (service grid: stacked on mobile, 3 columns on desktop) |
 | `js/config.js` | Shop name (`BULLLOCKS`), currency, feature flags |
 | `js/cart.js` | Client-side basket (localStorage stub) |
-| `js/main.js` | Nav and page init |
+| `js/panel-toggle.js` | One hide / show pattern for every panel (top bar, phone menu); open state kept in `localStorage` under `locksmith_panels` |
+| `js/main.js` | Panels (top bar, phone menu), nav and page init |
 | `data/catalog.json` | Product catalogue skeleton — categories and lock subcategories; add products here later |
 | `assets/` | Images and media |
 

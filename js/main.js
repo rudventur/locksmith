@@ -1,5 +1,5 @@
 /**
- * Page bootstrap — nav, cart badge, year stamp.
+ * Page bootstrap — panels (top bar, menu), cart badge, year stamp.
  * No product buy buttons yet; those arrive with the catalogue.
  */
 (function () {
@@ -22,22 +22,54 @@
     }
   }
 
-  function initNavToggle() {
+  /**
+   * Every panel uses the same hide / show pattern (js/panel-toggle.js):
+   *  - the top bar has a "hide" button; a small tab brings it back, and the
+   *    choice is remembered on this device
+   *  - the phone menu opens and closes through the same toggle (never
+   *    remembered, it is a drop-down)
+   */
+  function initPanels() {
+    var panels = window.sfPanels;
+    if (!panels) return;
+
+    panels.register({
+      id: 'header',
+      el: '#site-header',
+      label: 'the top bar',
+      side: 'top',
+      read: function () {
+        return !document.body.classList.contains('sf-hidden-header');
+      },
+      apply: function (open) {
+        document.body.classList.toggle('sf-hidden-header', !open);
+        if (!open) panels.set('nav', false);
+      },
+    });
+    panels.set('header', panels.saved('header', true), { noSave: true });
+
     var toggle = document.querySelector('.nav-toggle');
     var nav = document.getElementById('site-nav');
     if (!toggle || !nav) return;
 
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    panels.register({
+      id: 'nav',
+      el: nav,
+      label: 'the menu',
+      side: 'top',
+      remember: false,
+      read: function () {
+        return nav.classList.contains('is-open');
+      },
+      apply: function (open) {
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      },
     });
 
     nav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
-        nav.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'Open menu');
+        panels.set('nav', false);
       });
     });
   }
@@ -50,7 +82,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    initNavToggle();
+    initPanels();
     updateCartBadge();
     setYear();
   });
